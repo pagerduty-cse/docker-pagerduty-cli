@@ -6,6 +6,10 @@ RUN apt-get install curl -y
 RUN apt-get install wget -y
 RUN apt-get install less -y
 RUN apt-get install vim -y
+
+# install nodejs and npm
+RUN curl -sL https://deb.nodesource.com/setup_16.x -o ~/nodesource_setup.sh
+RUN sh ~/nodesource_setup.sh
 RUN apt-get install nodejs -y
 RUN apt-get install npm -y
 
