@@ -8,32 +8,32 @@
 
 # Supported tags and respective `Dockerfile` links
 
--   [`alpine`, `alpine-lite`, `lite`, `latest`](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/alpine/Dockerfile)
--   [`ubuntu`, `full`, `ubuntu-full`](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/ubuntu/Dockerfile)
+-   [`alpine`, `alpine-lite`, `lite`, `latest`](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/alpine/Dockerfile)
+-   [`ubuntu`, `full`, `ubuntu-full`](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/ubuntu/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	Issues can be filed on [GitHub](https://github.com/PagerDuty/docker-pagerduty-cli/issues)
+	Issues can be filed on [GitHub](https://github.com/pagerduty-cse/docker-pagerduty-cli/issues)
 
 -	**Source of this description**:  
-	[GitHub repo's README](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/README.md)
+	[GitHub repo's README](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/README.md)
 
-# What is docker-pagerduty-cli?
+# What is pagerduty-cli?
 
 Containerized versions of [Martin Stone's](https://github.com/martindstone) [command-line interface for PagerDuty](https://github.com/martindstone/pagerduty-cli). PagerDuty CLI uses the PagerDuty REST API to communicate with PagerDuty. It’s implemented in TypeScript and Node.js, using the wonderful [oclif](https://oclif.io/) library.
 
-The [Alpine](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/alpine/Dockerfile) image is based on the [Alpine 3.14.0](https://hub.docker.com/_/alpine) image with bare essentials needed to run PagerDuty CLI.
+The [Alpine](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/alpine/Dockerfile) image is based on the [latest Alpine](https://hub.docker.com/_/alpine) image with bare essentials needed to run PagerDuty CLI.
 
-The [Ubuntu](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/ubuntu/Dockerfile) image is based on the [Ubuntu 20.04](https://hub.docker.com/_/ubuntu) image with the following tools installed: curl, wget, less, vim, python3, pip, ruby, gem, & java. These additional tools are included for use in the [docker-pd-runner](https://github.com/PagerDuty/docker-pd-runner) application, which creates a containerized PD Runner for [PagerDuty Runbook Actions](https://www.pagerduty.com/).
+The [Ubuntu](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/ubuntu/Dockerfile) image is based on the [latest Ubuntu](https://hub.docker.com/_/ubuntu) image with the following tools installed: curl, wget, less, vim, python3, pip, ruby, gem, java, nodejs & npm. These additional tools are included for use in the [docker-pd-runner](https://github.com/PagerDuty/docker-pd-runner) application, which creates a containerized PD Runner for [PagerDuty Rundeck Actions](https://support.pagerduty.com/docs/rundeck-actions).
 
 # How to use this image
 
 ## Usage
 
-Starting a PagerDuty CLI container is simple (this example is using the Alpine 3.14.0 tag):
+Starting a PagerDuty CLI container is simple (this example is using the Alpine 'latest' tag):
 ```
-$ docker run -dit --name my-pagerduty-cli -e "API_TOKEN=INSERT-YOUR-API-KEY" mattlinebarger/pagerduty-cli:latest
+$ docker run -dit --name my-pagerduty-cli -e "API_TOKEN=INSERT-YOUR-API-KEY" pagerdutycs/pagerduty-cli:latest
 ```
 
 To log into a bash shell of your container:
