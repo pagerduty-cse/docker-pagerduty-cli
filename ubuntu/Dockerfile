@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 # get the essentials
 RUN apt-get update -y && apt-get upgrade -y
@@ -6,6 +6,8 @@ RUN apt-get install curl -y
 RUN apt-get install wget -y
 RUN apt-get install less -y
 RUN apt-get install vim -y
+RUN apt-get install nodejs -y
+RUN apt-get install npm -y
 
 # install python & pip
 RUN apt-get install software-properties-common -y
@@ -23,6 +25,7 @@ RUN apt-get install ruby-full -y
 RUN apt-get install default-jre -y
 
 # install pagerduty-cli
-RUN echo y | sh -c "$(curl -sL https://raw.githubusercontent.com/martindstone/pagerduty-cli/master/install.sh)"
+# RUN echo y | sh -c "$(curl -sL https://raw.githubusercontent.com/martindstone/pagerduty-cli/master/install.sh)"
+RUN npm install -g pagerduty-cli
 ENV API_TOKEN="PLACEHOLDER_TOKEN"
 ENTRYPOINT echo ${API_TOKEN} | pd auth:set && /bin/bash
