@@ -37,5 +37,4 @@ RUN apt-get install -y default-jre
 
 # install pagerduty-cli
 RUN npm install -g pagerduty-cli
-ENV API_TOKEN="PLACEHOLDER_TOKEN"
-ENTRYPOINT /bin/bash && echo ${API_TOKEN} | pd auth:set
+ENTRYPOINT /bin/bash

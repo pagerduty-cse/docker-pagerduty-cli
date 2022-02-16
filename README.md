@@ -25,7 +25,7 @@ Containerized versions of [Martin Stone's](https://github.com/martindstone) [com
 
 The [Alpine](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/alpine/Dockerfile) image is based on the [latest Alpine](https://hub.docker.com/_/alpine) image with bare essentials needed to run PagerDuty CLI.
 
-The [Ubuntu](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/ubuntu/Dockerfile) image is based on the [latest Ubuntu](https://hub.docker.com/_/ubuntu) image with the following tools installed: curl, wget, less, vim, python3, pip, ruby, gem, java, nodejs & npm. These additional tools are included for use in the [docker-pd-runner](https://github.com/PagerDuty/docker-pd-runner) application, which creates a containerized PD Runner for [PagerDuty Rundeck Actions](https://support.pagerduty.com/docs/rundeck-actions).
+The [Ubuntu](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/ubuntu/Dockerfile) image is based on the [latest Ubuntu](https://hub.docker.com/_/ubuntu) image with the following tools installed: curl, wget, less, vim, python3, go, pip, ruby, gem, java, nodejs & npm. These additional tools are included for use in the [docker-pd-runner](https://github.com/PagerDuty/docker-pd-runner) application, which creates a containerized PD Runner for [PagerDuty Rundeck Actions](https://support.pagerduty.com/docs/rundeck-actions).
 
 # How to use this image
 
@@ -33,12 +33,17 @@ The [Ubuntu](https://github.com/PagerDuty/docker-pagerduty-cli/blob/main/ubuntu/
 
 Starting a PagerDuty CLI container is simple (this example is using the Alpine 'latest' tag):
 ```
-$ docker run -dit --name my-pagerduty-cli -e "API_TOKEN=INSERT-YOUR-API-KEY" pagerdutycs/pagerduty-cli:latest
+$ docker run -dit --name my-pagerduty-cli pagerdutycs/pagerduty-cli:latest
 ```
 
 To log into a bash shell of your container:
 ```
 $ docker exec -it my-pagerduty-cli /bin/bash
+```
+
+Add an authenticated PagerDuty domain (add your PagerDuty API key when prompted):
+```
+$ docker exec -it my-pagerduty-cli pd auth:set
 ```
 
 To run PagerDuty CLI commands from the host (this example lists closed incidents):
