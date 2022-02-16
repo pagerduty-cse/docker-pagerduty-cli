@@ -16,11 +16,16 @@ RUN apt-get install -y nodejs
 # install python & pip
 RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt-get install -y python3.9
+RUN apt-get install -y python3.10
 RUN rm /usr/bin/python3
-RUN ln -s /usr/bin/python3.9 /usr/bin/python3
-RUN ln -s /usr/bin/python3.9 /usr/bin/python
+RUN ln -s /usr/bin/python3.10 /usr/bin/python3
+RUN ln -s /usr/bin/python3.10 /usr/bin/python
 RUN apt-get install -y python3-pip
+
+# install go
+RUN curl -sL https://go.dev/dl/go1.17.7.linux-amd64.tar.gz  -o /tmp/go.tar.gz
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf /tmp/go.tar.gz
+RUN rm -rf /tmp/go.tar.gz
 
 # install ruby & gem
 RUN apt-get install -y ruby-full
@@ -29,7 +34,6 @@ RUN apt-get install -y ruby-full
 RUN apt-get install -y default-jre
 
 # install pagerduty-cli
-# RUN echo y | sh -c "$(curl -sL https://raw.githubusercontent.com/martindstone/pagerduty-cli/master/install.sh)"
 RUN npm install -g pagerduty-cli
 ENV API_TOKEN="PLACEHOLDER_TOKEN"
 ENTRYPOINT echo ${API_TOKEN} | pd auth:set && /bin/bash
