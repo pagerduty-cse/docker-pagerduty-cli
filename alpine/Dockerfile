@@ -9,5 +9,4 @@ RUN apk add npm
 
 # install pagerduty-cli
 RUN npm install -g pagerduty-cli
-ENV API_TOKEN="PLACEHOLDER_TOKEN"
-ENTRYPOINT echo ${API_TOKEN} | pd auth:set && /bin/bash
+ENTRYPOINT /bin/bash
