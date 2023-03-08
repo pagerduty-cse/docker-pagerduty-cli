@@ -1,23 +1,21 @@
 # Quick reference
 
 -	**Maintained by**:  
-	[Matt Linebarger](https://github.com/mattlinebarger), Sr. Customer Success Engineer @ [PagerDuty](https://www.pagerduty.com/)
+	[Matt Linebarger](https://github.com/mattlinebarger), Sr. Manager, Customer Success Engineering @ [PagerDuty](https://www.pagerduty.com/)
 
 -	**Where to get help**:  
 	For help with the Docker images please contact Matt at <mlinebarger@pagerduty.com>. For help with PagerDuty CLI please check out the [PagerDuty CLI User Guide](https://github.com/martindstone/pagerduty-cli/wiki/PagerDuty-CLI-User-Guide).
-
-# Supported tags and respective `Dockerfile` links
-
--   [`alpine`, `alpine-lite`, `lite`, `latest`](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/alpine/Dockerfile)
--   [`ubuntu`, `full`, `ubuntu-full`](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/ubuntu/Dockerfile)
-
-# Quick reference (cont.)
 
 -	**Where to file issues**:  
 	Issues can be filed on [GitHub](https://github.com/pagerduty-cse/docker-pagerduty-cli/issues)
 
 -	**Source of this description**:  
 	[GitHub repo's README](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/README.md)
+
+# Supported tags and respective `Dockerfile` links
+
+-   [`alpine`, `alpine-lite`, `lite`, `latest`](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/alpine/Dockerfile)
+-   [`ubuntu`, `full`, `ubuntu-full`](https://github.com/pagerduty-cse/docker-pagerduty-cli/blob/main/ubuntu/Dockerfile)
 
 # What is pagerduty-cli?
 
