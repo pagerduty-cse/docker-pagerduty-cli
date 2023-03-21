@@ -1,10 +1,14 @@
 # Quick reference
 
 -	**Maintained by**:  
+<<<<<<< Updated upstream
 	[Matt Linebarger](https://github.com/mattlinebarger), Sr. Manager, Customer Success Engineering @ [PagerDuty](https://www.pagerduty.com/)
+=======
+	Customer Success Engineering @ [PagerDuty](https://www.pagerduty.com/)
+>>>>>>> Stashed changes
 
 -	**Where to get help**:  
-	For help with the Docker images please contact Matt at <mlinebarger@pagerduty.com>. For help with PagerDuty CLI please check out the [PagerDuty CLI User Guide](https://github.com/martindstone/pagerduty-cli/wiki/PagerDuty-CLI-User-Guide).
+	For help with the Docker images please contact the Customer Success Engineering team at <cse@pagerduty.com>.For help with PagerDuty CLI please check out the [PagerDuty CLI User Guide](https://github.com/martindstone/pagerduty-cli/wiki/PagerDuty-CLI-User-Guide).
 
 -	**Where to file issues**:  
 	Issues can be filed on [GitHub](https://github.com/pagerduty-cse/docker-pagerduty-cli/issues)
